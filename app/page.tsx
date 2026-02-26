@@ -23,8 +23,24 @@ const apps = [
     name: "Ramazan İmsakiyesi 2026: Sayaç",
     description:
       "İmsak, iftar ve sahur vakitlerine özel geri sayım, sade ve hızlı kullanım.",
-    status: "Yakında",
+    status: "Yayında",
     logo: "/assets/ramazan-imsakiyesi.png",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.mobrixlabs.ramazanimsakiyesi2026&pli=1",
+  },
+  {
+    name: "RockSmash",
+    description:
+      "Hızlı tempolu oynanışa odaklanan, refleks ve zamanlama tabanlı mobil oyun deneyimi.",
+    status: "Yakında",
+    logo: "/assets/rocksmash.png",
+  },
+  {
+    name: "Kelimelik",
+    description:
+      "Kelime dağarcığını güçlendiren, eğlenceli ve rekabetçi bulmaca odaklı mobil deneyim.",
+    status: "Yakında",
+    logo: "/assets/kelimelik.png",
   },
 ];
 
@@ -142,7 +158,7 @@ export default function Home() {
                 <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                     <p className="text-xs text-white/60">Geliştirilen Ürün</p>
-                    <p className="mt-2 text-2xl font-semibold">1</p>
+                    <p className="mt-2 text-2xl font-semibold">5</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                     <p className="text-xs text-white/60">Platform</p>
@@ -233,13 +249,24 @@ export default function Home() {
                       </span>
                     </div>
                     <div className="mt-6 flex flex-wrap gap-3">
-                      <button
-                        className="cursor-not-allowed rounded-full border border-white/10 px-4 py-2 text-xs text-white/40"
-                        type="button"
-                        aria-disabled="true"
-                      >
-                        Play Store Yakında
-                      </button>
+                      {app.playStoreUrl ? (
+                        <a
+                          className="rounded-full border border-[#ff8f26]/60 px-4 py-2 text-xs text-[#ffb266] transition hover:border-[#ff8f26] hover:text-white"
+                          href={app.playStoreUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Google Play'de Aç
+                        </a>
+                      ) : (
+                        <button
+                          className="cursor-not-allowed rounded-full border border-white/10 px-4 py-2 text-xs text-white/40"
+                          type="button"
+                          aria-disabled="true"
+                        >
+                          Play Store Yakında
+                        </button>
+                      )}
                       <button
                         className="cursor-not-allowed rounded-full border border-white/10 px-4 py-2 text-xs text-white/40"
                         type="button"
